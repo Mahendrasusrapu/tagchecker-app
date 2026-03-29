@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tag Checker</title>
+</head>
+<body>
+    <h2>Tag Checker App</h2>
+
+    <form method="POST">
+        <label>Select Village:</label>
+        <select name="village" required>
+            <option value="">-- Select Village --</option>
+            {% for village in villages %}
+                <option value="{{ village }}">{{ village }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <label>Enter Tag ID:</label>
+        <input type="text" name="tag_id" required>
+
+        <br><br>
+
+        <button type="submit">Check</button>
+    </form>
+
+    <h3>{{ message }}</h3>
+</body>
+</html>
